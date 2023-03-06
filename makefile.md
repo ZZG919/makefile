@@ -30,6 +30,14 @@ make -f mymakefile
 
 ### makefile内容
 
+#### makefile基本指令
+
+```tex
+目标文件名：多个依赖文件名以空格分开
+
+\tab依赖文件变化后进行的指令操作
+```
+
 #### 版本1
 
 ```
@@ -39,6 +47,8 @@ hello: main.cpp printhello.cpp factorial.cpp
 ```
 
 #### 版本2
+
+使用变量代替文本，使用$(变量名)获取遍历变量值。
 
 ```
 ### VERSION 2
@@ -98,8 +108,24 @@ clean:
 展开为已经存在的、使用空格分开的、匹配此模式的所有文件列表。
 SRC=$(wildcard *.cpp *.cc)
 
-**patsubst** - 匹配替换
-格式：$(patsubst,, )
+**patsubst** - 匹配替换格式：
+
+$(patsubst <pattern>,<replacement>,<text> ) 
+
+名称：模式字符串替换函数——patsubst。
+功能：查找<text>中的单词（单词以“空格”、“Tab”或“回车”“换行”分隔）是否符合模式<pattern>，如果匹配的话，则以<replacement>替换。
+
+　　　这里，<pattern>可以包括通配符“%”，表示任意长度的字串。如果<replacement>中也包含“%”，那么，<replacement>中的这个“%”将是<pattern>中的那个“%”所代表的字串。
+
+　　　（可以用“\”来转义，以“\%”来表示真实含义的“%”字符）
+
+​			返回：函数返回被替换过后的字符串。
+
+示例：
+
+$(patsubst %.c,%.o, a.c b.c)
+
+把字串“a.c b.c”符合模式[%.c]的单词替换成[%.o]，返回结果是“a.o b.o”
 
 ```
 ### VERSION 2
