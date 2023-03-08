@@ -50,6 +50,6 @@
 
 这些执行过程可用C++编译器对源文件进行操作，即指令操作。(详见g++.md文件说明)
 
-集合了指令操作即为makefile操作，由于makefile操作不好写，可用cmake生成makefile文件（详见makefile.md,Cmake.md文件）
+集合了指令操作即为Makefile操作，由于makefile操作不好写，可用CMake生成Makefile文件（详见Makefile.md,CMake.md文件）
 
 由于指令操作的集合顺序的先后，可用ninja进行文件的加速（详见ninja.md文件）

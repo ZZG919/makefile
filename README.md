@@ -6,8 +6,8 @@
 
 学习C++项目编译指令：g++.md
 
-学习C++项目编译指令集合：makefile.md
+学习C++项目编译指令集合：Makefile.md
 
-学习C++项目快速生成makefile文件：Cmake.md
+学习C++项目快速生成makefile文件：CMake.md
 
 学习优化C++项目编译速度：ninja.md
